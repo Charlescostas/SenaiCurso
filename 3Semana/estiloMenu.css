@@ -1,0 +1,48 @@
+.Container{
+    display: flex;             
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    background-color: rgb(20, 20, 20);
+    border-width: 20px; /* Largura da borda (importante para o gradiente) */
+    border-style: solid;
+    border-image: linear-gradient(to right, #ff8c00, #dbbc0cd2); /* Gradiente */
+    border-image-slice: 1; /* Permite que o gradiente seja aplicado na sua totalidade */
+    border-radius: 2px; /* Arredondamento das bordas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ao redor do menu */
+}
+
+.Item-direita{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 253, 250); 
+}
+
+.Item-esquerda{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 253, 250); 
+}
+
+.Titulo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(197, 178, 178); 
+}
+
+.Estrela img{
+    width: 80px;
+    height: 80px;
+}
+
+.Petisco img{
+    width: 80px;
+    height: 80px;
+}
