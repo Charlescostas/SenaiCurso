@@ -1,0 +1,13 @@
+body{
+    font-size: 20;
+}
+img{
+    width: 150px;
+    border-radius: 50%;
+}
+p{
+    color: blue;
+}
+h3{
+    color: red;
+}
