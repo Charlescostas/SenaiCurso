@@ -1,0 +1,19 @@
+.container{
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: antiquewhite; 
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px #5c4d4d; 
+}
+.imagem{
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+h1, h2, h3, p{
+    margin: opx;
+}
+.descricao{
+    text-align: justify;
+}
