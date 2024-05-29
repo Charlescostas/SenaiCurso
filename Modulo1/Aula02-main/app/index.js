@@ -1,0 +1,1 @@
+import Pessoa { numero   } from './pessoas/crud.js'

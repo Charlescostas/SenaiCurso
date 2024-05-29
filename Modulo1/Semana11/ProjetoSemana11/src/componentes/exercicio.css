@@ -1,0 +1,16 @@
+.container{
+    height: 100px;
+    width: 100%;
+    background: #FEF7FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    margin-bottom: auto;
+}
+.container button{
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    margin: 15px;
+}

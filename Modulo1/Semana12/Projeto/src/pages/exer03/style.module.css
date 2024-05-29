@@ -1,0 +1,23 @@
+.container {
+    margin: 0 auto;
+    top: 50px;
+    left: 50px;     
+}
+
+
+.container form input + label {
+    display: block;
+    margin-top: 16px;
+}
+
+
+.container button {
+    margin-top: 16px;
+}
+
+.container form{
+    width: 500px;
+    height: 500px;
+    margin-top: 20px;
+    margin-top: 10px; 
+}

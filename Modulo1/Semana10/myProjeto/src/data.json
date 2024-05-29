@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "nome": "Tecnologia",
+      "descricao": "Interesses relacionados a tecnologia, gadgets e inovações tecnológicas."
+    },
+    {
+      "id": 2,
+      "nome": "Esportes",
+      "descricao": "Interesses relacionados a esportes, competições e atividades físicas."
+    },
+    {
+      "id": 3,
+      "nome": "Arte e Cultura",
+      "descricao": "Interesses relacionados a arte, cultura, música, cinema e literatura."
+    },
+    {
+      "id": 4,
+      "nome": "Viagens",
+      "descricao": "Interesses relacionados a viagens, turismo e destinos ao redor do mundo."
+    },
+    {
+      "id": 5,
+      "nome": "Alimentação",
+      "descricao": "Interesses relacionados a gastronomia, culinária e receitas."
+    }
+  ]

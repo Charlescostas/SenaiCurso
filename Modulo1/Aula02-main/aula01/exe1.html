@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+</head>
+<body>
+    <h1>Gerenciador de Tarefas</h1>
+
+    <!-- Formulário para adicionar tarefa -->
+    <form id="form-adicionar">
+        <input type="text" id="descricao" placeholder="Descrição da tarefa" required>
+        <button type="submit">Adicionar Tarefa</button>
+    </form>
+
+    <!-- Lista de tarefas -->
+    <ul id="lista-tarefas"></ul>
+
+    <script src="exe1.js"></script>
+    <script>
+        // Função para adicionar uma tarefa ao enviar o formulário
+        document.getElementById('form-adicionar').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const descricao = document.getElementById('descricao').value;
+            adicionarTarefa(descricao);
+            atualizarTarefas();
+        });
+
+        function remover(id) {
+            removerTarefa(id);
+            atualizarTarefas();
+        }
+
+        function atualizarTarefas() {
+            const listaTarefasElement = document.getElementById('lista-tarefas');
+            listaTarefasElement.innerHTML = ''; // Limpa a lista de tarefas
+
+            listaDeTarefas.forEach(tarefa => {
+                const itemLista = document.createElement('li');
+                itemLista.innerHTML = `ID: ${tarefa.id}, Descrição: ${tarefa.descricao}, Concluída: ${tarefa.concluida ? 'Sim' : 'Não'} <button onclick="remover(${tarefa.id})">Remover</button>`;
+                listaTarefasElement.appendChild(itemLista);
+            });
+        }
+
+        atualizarTarefas();
+    </script>
+</body>
+</html>

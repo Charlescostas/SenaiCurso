@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculatora</title>
+        <link rel="stylesheet" href="./estilo.css">
+        <script src="./funcoes.js"></script>
+    </head>
+    <body>
+        <header>
+            <figure> 
+                <img src="./imagem/logo.jpg" alt="Trulli" style="width:10%">
+                <!-- <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption> -->
+            </figure>
+        </header>
+        <main>
+            <section>
+                <div class="calculatora">
+                    <!-- Display -->
+                    <div class="display">
+                        <input id="display-info" type="text" disabled="true">
+                    </div>
+
+                    <div class="linhas">
+                        <button class="numero" onclick="addValor(7)">7</button>
+                        <button class="numero" onclick="addValor(8)">8</button>
+                        <button class="numero" onclick="addValor(9)">9</button>
+                        <button class="limpar" onclick="limpar()"> C </button>
+                    </div>
+
+                    <div class="linhas">
+                        <button class="numero" onclick="addValor(4)">4</button>
+                        <button class="numero" onclick="addValor(5)">5</button>
+                        <button class="numero" onclick="addValor(6)">6</button>
+                        <button class="operador" onclick="addValor('-')"> - </button>
+                    </div>
+
+                    <div class="linhas">
+                        <button class="numero" onclick="addValor(1)">1</button>
+                        <button class="numero" onclick="addValor(2)">2</button>
+                        <button class="numero" onclick="addValor(3)">3</button>
+                        <button class="operador" onclick="addValor('+')"> + </button>
+                    </div>    
+
+                    <div class="linhas">
+                        <button class="numero" onclick="addValor(0)">0</button>
+                        <button class="operador" onclick="calcularOperacao()"> = </button>
+                        <button class="operador" onclick="addValor('*')"> * </button>
+                        <button class="operador" onclick="addValor('/')"> / </button>
+                    </div>    
+
+                </div>
+            </section>
+        </main>
+        <footer class="rodape">
+            <h6>Calculatora versão 1.00</h6>
+        </footer>
+    </body>
+</html>
