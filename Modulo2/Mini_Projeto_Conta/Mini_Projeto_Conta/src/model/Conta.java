@@ -13,7 +13,7 @@ public abstract class Conta {
         this.saldo = getSaldo() + valor;
     };
 
-    public abstract void sacar(double valor);
+    public abstract void sacar(Double valor);
 
     public abstract void exibirDetalhes();
 
