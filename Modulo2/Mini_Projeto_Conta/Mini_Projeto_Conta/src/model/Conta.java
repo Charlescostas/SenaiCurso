@@ -21,6 +21,10 @@ public abstract class Conta {
         return titular;
     }
 
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
     public double getSaldo() {
         return saldo;
     }
