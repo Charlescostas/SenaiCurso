@@ -1,5 +1,7 @@
 package model;
 
+import exceptions.SaldoInsuficienteException;
+
 public class ContaPoupanca extends Conta {
     private double rendimento;
 
@@ -13,7 +15,11 @@ public class ContaPoupanca extends Conta {
     };
 
     @Override
-    public void sacar(Double valor) {
+    public void sacar(Double valor) throws SaldoInsuficienteException {
+        if (getSaldo()<valor){
+            throw new SaldoInsuficienteException("Saldo Conta Insuficiente.");
+        }
+        else {this.sacar(getSaldo()-valor);}
     }
     
     @Override

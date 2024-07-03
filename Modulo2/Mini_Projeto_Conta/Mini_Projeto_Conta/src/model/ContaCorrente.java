@@ -1,18 +1,19 @@
 package model;
 
+import exceptions.SaldoInsuficienteException;
+
 public class ContaCorrente extends Conta {
     private double limite;
 
     public ContaCorrente(String titular, double saldo, double limite) {
         super(titular, saldo);
         this.limite = limite;
-        this.sacar(saldo);
     }
 
     @Override
-    public void sacar(Double valor) {
+    public void sacar(Double valor) throws SaldoInsuficienteException {
         if (this.limite+getSaldo()<valor){
-            System.out.println("Valor do saque maior que o limite.");
+            throw new SaldoInsuficienteException("Saldo Conta Insuficiente.");
         }
         else {this.sacar(getSaldo()-valor);}
     }

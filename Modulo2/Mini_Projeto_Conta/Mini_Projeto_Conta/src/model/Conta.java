@@ -1,4 +1,5 @@
 package model;
+import exceptions.SaldoInsuficienteException;
 
 public abstract class Conta {
     private final String titular;
@@ -13,7 +14,7 @@ public abstract class Conta {
         this.saldo = getSaldo() + valor;
     };
 
-    public abstract void sacar(Double valor);
+    public abstract void sacar(Double valor) throws SaldoInsuficienteException;
 
     public abstract void exibirDetalhes();
 
