@@ -26,7 +26,7 @@ public class ContaPoupanca extends Conta {
     public void exibirDetalhes() {
         System.out.println("=============== EXTRATO ===============");
         System.out.println("== TITULAR: "+getTitular()+"===");
-        System.out.println("==   SALDO: "+getTitular()+"===");
+        System.out.println("==   SALDO: "+getSaldo()+"===");
         System.out.println("=======================================");
     }
 }
