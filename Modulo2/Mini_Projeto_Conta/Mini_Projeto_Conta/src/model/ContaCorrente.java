@@ -15,14 +15,14 @@ public class ContaCorrente extends Conta {
         if (this.limite+getSaldo()<valor){
             throw new SaldoInsuficienteException("Saldo Conta Insuficiente.");
         }
-        else {this.sacar(getSaldo()-valor);}
+        else {this.setSaldo(getSaldo()-valor);}
     }
 
     @Override
     public void exibirDetalhes() {
         System.out.println("=============== EXTRATO ===============");
         System.out.println("== TITULAR: "+getTitular()+"===");
-        System.out.println("==   SALDO: "+getTitular()+"===");
+        System.out.println("==   SALDO: "+getSaldo()+"===");
         System.out.println("=======================================");
     }
 }

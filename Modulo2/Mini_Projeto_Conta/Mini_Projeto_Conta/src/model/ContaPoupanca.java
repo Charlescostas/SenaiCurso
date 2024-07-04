@@ -19,7 +19,7 @@ public class ContaPoupanca extends Conta {
         if (getSaldo()<valor){
             throw new SaldoInsuficienteException("Saldo Conta Insuficiente.");
         }
-        else {this.sacar(getSaldo()-valor);}
+        else {this.setSaldo(getSaldo()-valor);}
     }
     
     @Override
