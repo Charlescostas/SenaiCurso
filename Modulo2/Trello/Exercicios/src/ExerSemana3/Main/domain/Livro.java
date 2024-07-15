@@ -1,7 +1,9 @@
 package ExerSemana3.Main.domain;
 
+import java.util.UUID;
+
 public class Livro {
-    private String ISBN;
+    private final String ISBN;
     private String titulo;
     private String autor;
     private String editora;
@@ -9,6 +11,16 @@ public class Livro {
     private String genero;
 
     public Livro(){
+        this.ISBN = UUID.randomUUID().toString();
+    }
+
+    public Livro(String ISBN, String titulo, String autor, String editora, Integer anoPublicacao, String genero) {
+        this.ISBN = UUID.randomUUID().toString();
+        this.titulo = titulo;
+        this.autor = autor;
+        this.editora = editora;
+        this.anoPublicacao = anoPublicacao;
+        this.genero = genero;
     }
 
     public String getISBN() {
