@@ -71,11 +71,11 @@ public class Livro {
     public String toString() {
         return "Livro{" +
                 "ISBN='" + ISBN + '\'' +
-                ", titulo='" + titulo + '\'' +
-                ", autor='" + autor + '\'' +
-                ", editora='" + editora + '\'' +
-                ", anoPublicacao=" + anoPublicacao +
-                ", genero='" + genero + '\'' +
+                ", Titulo='" + titulo + '\'' +
+                ", Autor='" + autor + '\'' +
+                ", Editora='" + editora + '\'' +
+                ", Ano de Publicação=" + anoPublicacao +
+                ", Genero='" + genero + '\'' +
                 '}';
     }
 }

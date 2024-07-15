@@ -17,14 +17,14 @@ public class LivroEletronico extends Livro{
     public String toString() {
         return "LivroEletronico{" +
                 "ISBN='" + getISBN() + '\'' +
-                ", titulo='" + getTitulo() + '\'' +
-                ", autor='" + getAutor() + '\'' +
-                ", editora='" + getEditora() + '\'' +
-                ", anoPublicacao=" + getAnoPublicacao() +
-                ", genero='" + getGenero() + '\'' +
-                "formato_arq='" + formato_arq + '\'' +
-                ", tamanho_arq='" + tamanho_arq + '\'' +
-                ", platafroma_arq='" + platafroma_arq + '\'' +
+                ", Titulo='" + getTitulo() + '\'' +
+                ", Autor='" + getAutor() + '\'' +
+                ", Editora='" + getEditora() + '\'' +
+                ", Ano Publicação=" + getAnoPublicacao() +
+                ", Genero='" + getGenero() + '\'' +
+                ", Formato do Arquivo='" + formato_arq + '\'' +
+                ", Tamanho do Arquivo='" + tamanho_arq + '\'' +
+                ", Platafroma do Arquivo='" + platafroma_arq + '\'' +
                 '}';
     }
 }
