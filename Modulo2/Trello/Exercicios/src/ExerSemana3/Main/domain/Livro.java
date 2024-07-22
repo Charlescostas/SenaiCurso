@@ -7,8 +7,8 @@ public class Livro {
     private String titulo;
     private String autor;
     private String editora;
-    private Integer anoPublicacao;
-    private String genero;
+    protected Integer anoPublicacao;
+    public String genero;
 
     public Livro(){
         this.ISBN = UUID.randomUUID().toString();
