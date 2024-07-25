@@ -1,9 +1,11 @@
 package ExerSemana3.Main.domain;
+import ExerSemana3.Main.interfaces.emprestimo;
 
-public class LivroImpresso extends Livro{
+import java.util.Date;
+
+public class LivroImpresso extends Livro implements emprestimo{
     private Integer numero_paginas;
     private String tipo_capa;
-
 
     public LivroImpresso(String ISBN, String titulo, String autor, String editora, Integer anoPublicacao,
                          String genero, Integer numero_paginas, String tipo_capa) {
@@ -15,6 +17,7 @@ public class LivroImpresso extends Livro{
     @Override
     public String toString() {
         return "LivroImpresso{" +
+                "ISBN='" + getISBN() + '\'' +
                 "ISBN='" + getISBN() + '\'' +
                 ", Titulo='" + getTitulo() + '\'' +
                 ", Autor='" + getAutor() + '\'' +
