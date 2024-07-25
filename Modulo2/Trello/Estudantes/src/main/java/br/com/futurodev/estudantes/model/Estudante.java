@@ -1,10 +1,16 @@
 package br.com.futurodev.estudantes.model;
 
+import jakarta.validation.constraints.NotNull;
 import java.util.Objects;
 
 public class Estudante {
+    @NotNull
     public Integer registro;
+
+    @NotNull
     public String nome;
+
+    @NotNull
     public String email;
 
     public Estudante() {
