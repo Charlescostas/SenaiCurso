@@ -4,8 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import java.util.Objects;
 
 public class Estudante {
-    @NotNull
-    public Integer registro;
+    public Long registro;
 
     @NotNull
     public String nome;
@@ -16,17 +15,17 @@ public class Estudante {
     public Estudante() {
     }
 
-    public Estudante(Integer registro, String nome, String email) {
+    public Estudante(Long registro, String nome, String email) {
         this.registro = registro;
         this.nome = nome;
         this.email = email;
     }
 
-    public Integer getRegistro() {
+    public Long getRegistro() {
         return registro;
     }
 
-    public void setRegistro(Integer registro) {
+    public void setRegistro(Long registro) {
         this.registro = registro;
     }
 
@@ -51,7 +50,8 @@ public class Estudante {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Estudante estudante = (Estudante) o;
-        return Objects.equals(registro, estudante.registro) && Objects.equals(nome, estudante.nome) && Objects.equals(email, estudante.email);
+        return Objects.equals(registro, estudante.registro) && Objects.equals
+                (nome, estudante.nome) && Objects.equals(email, estudante.email);
     }
 
     @Override

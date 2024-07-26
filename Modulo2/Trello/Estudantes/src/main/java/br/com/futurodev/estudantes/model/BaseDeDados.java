@@ -10,21 +10,43 @@ public class BaseDeDados {
     public BaseDeDados() {
     }
 
-    public static void adicionar(Estudante estudante){
-        BaseDeDados.listaEstudantes.add(estudante);
-    }
-
-    public static void delete(Integer id) {
-        BaseDeDados.listaEstudantes.removeIf(task -> task.getRegistro().equals(id));
-    }
-
     public static List<Estudante> list() {
         return BaseDeDados.listaEstudantes;
     }
 
-    public static Estudante search(Integer id) {
+    public static Estudante search(Long id) {
         Optional<Estudante> optionalTarefa = BaseDeDados.listaEstudantes.stream()
                 .filter(estudante -> estudante.getRegistro().equals(id)).findFirst();
         return optionalTarefa.orElse(null);
+    }
+
+    public static void adicionar(Estudante estudante){
+        BaseDeDados.listaEstudantes.add(estudante);
+    }
+
+
+    public static Estudante update(Long id, Estudante estudante) throws Exception {
+        Estudante estudanteToUpdate = BaseDeDados.search(id);
+        if (estudanteToUpdate != null) {
+            estudanteToUpdate.setEmail(estudante.getEmail() != null ? estudante.getEmail() : estudanteToUpdate.getEmail());
+            estudanteToUpdate.setNome(estudante.getNome() != null ? estudante.getNome() : estudanteToUpdate.getNome());
+            return estudanteToUpdate;
+        }
+
+        throw new Exception("O Estudante não foi encontrado");
+    }
+
+    public static Estudante buscar(Long id, Estudante estudante) throws Exception {
+        Estudante estudanteToUpdate = BaseDeDados.search(id);
+        if (estudanteToUpdate != null) {
+            return estudanteToUpdate;
+        }
+
+        throw new Exception("O Estudante não foi encontrado");
+    }
+
+
+    public static void delete(Long id) {
+        BaseDeDados.listaEstudantes.removeIf(estudante -> estudante.getRegistro().equals(id));
     }
 }
