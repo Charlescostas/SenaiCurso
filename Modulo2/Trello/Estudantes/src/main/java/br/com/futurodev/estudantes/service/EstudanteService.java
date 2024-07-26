@@ -22,4 +22,8 @@ public class EstudanteService {
         }
         BaseDeDados.adicionar(estudante);
     }
+
+    public void delete(Long id) {
+        BaseDeDados.delete(id);
+    }
 }

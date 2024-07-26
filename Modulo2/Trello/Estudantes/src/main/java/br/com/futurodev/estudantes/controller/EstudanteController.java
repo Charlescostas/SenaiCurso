@@ -37,4 +37,10 @@ public class EstudanteController {
         this.estudanteService.create(estudante);
         return ResponseEntity.ok(estudante);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
+        this.estudanteService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 }
