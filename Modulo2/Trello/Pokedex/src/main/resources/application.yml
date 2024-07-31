@@ -1,0 +1,10 @@
+spring:
+  application:
+    name=pokedex:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pokedex
+    username: postgres
+    password: net.net6910
+  jpa:
+    hibernate:
+      ddl-auto: update
