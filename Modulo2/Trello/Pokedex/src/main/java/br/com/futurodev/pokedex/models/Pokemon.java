@@ -1,17 +1,17 @@
-package models;
+package br.com.futurodev.pokedex.models;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
+@Table(name = "pokemon")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class Pokemon {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer numero;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long numero;
 
     @Column(nullable = false)
     private String nome;
