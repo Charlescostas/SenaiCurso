@@ -3,8 +3,8 @@ spring:
     name=pokedex:
   datasource:
     url: jdbc:postgresql://localhost:5432/desapega
-    username: postgres
-    password: net.net6910
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
