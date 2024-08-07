@@ -1,11 +1,13 @@
 package br.com.futurodev.desapega.service;
 
-import br.com.futurodev.desapega.exception.PersonAlreadyExistsException;
+import br.com.futurodev.desapega.exception.UserAlreadyRegisteredException;
 import br.com.futurodev.desapega.exception.PersonNotFoundException;
 import br.com.futurodev.desapega.model.Person;
+import br.com.futurodev.desapega.model.Wallet;
 import br.com.futurodev.desapega.model.transport.CreatePersonForm;
 import br.com.futurodev.desapega.model.transport.PersonDTO;
 import br.com.futurodev.desapega.repository.PersonRepository;
+import br.com.futurodev.desapega.repository.WalletRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,6 +19,7 @@ import org.springframework.stereotype.Service;
 public class PersonService implements UserDetailsService {
     private final PersonRepository personRepository;
     private final PasswordEncoder passwordEncoder;
+    private WalletRepository walletRepository;
 
     public PersonService(PersonRepository personRepository, PasswordEncoder passwordEncoder) {
         this.personRepository = personRepository;
@@ -41,13 +44,18 @@ public class PersonService implements UserDetailsService {
     }
 
     @Transactional
-    public PersonDTO createPerson(CreatePersonForm form) throws PersonAlreadyExistsException {
+    public PersonDTO createPerson(CreatePersonForm form) throws UserAlreadyRegisteredException {
         if (this.personRepository.existsByEmail(form.email())){
-            throw new PersonAlreadyExistsException(form.email());
+            throw new UserAlreadyRegisteredException(form.email());
         }
-        
+
         String encodedPassword = this.passwordEncoder.encode(form.password());
         Person persistedPerson = this.personRepository.save(new Person(form, encodedPassword));
+
+        Wallet wallet = new Wallet();
+        wallet.setId(persistedPerson.getId());
+        persistedPerson.setWallet(wallet);
+
         return new PersonDTO(persistedPerson);
     }
 }

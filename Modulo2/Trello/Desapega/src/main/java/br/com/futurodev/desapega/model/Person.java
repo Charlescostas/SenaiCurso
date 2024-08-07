@@ -3,7 +3,6 @@ package br.com.futurodev.desapega.model;
 import br.com.futurodev.desapega.model.transport.CreatePersonForm;
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,6 +20,7 @@ import java.util.List;
 public class Person implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id")
     private long id;
 
     @Column(length = 150, nullable = false)
@@ -62,6 +62,7 @@ public class Person implements UserDetails {
         this.name = form.name();
         this.email = form.email();
         this.password = password;
+        this.phone = form.phone();
         this.createdAt = LocalDateTime.now();
     }
 
